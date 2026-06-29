@@ -1,0 +1,13 @@
+pip uninstall -y torch torchvision torchaudio
+!pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+
+pip install ipywidgets
+
+pip install pandas
+pip install scikit-image
+pip install torch_geometric
+pip install scikit-learn
+pip install matplotlib
+pip install wandb
+pip install optuna
+
