@@ -11,4 +11,4 @@ Official repository accompanying the paper: **"Geometry-Aware Superpixel Graph T
 
 **Authors:** Muhammad Azeem, Tanveer Hussain, Amr Ahmed, and Ardhendu Behera  
 
-**Institution:** Edge Hill University, Ormskirk, Lancashire, UK 
+**Institution:** Edge Hill University, Ormskirk, Lancashire, UK
