@@ -2,7 +2,7 @@
 
 <p align="left">
   <a href="#" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/MICCAI-2026-blue" alt="Conference"></a>
-  <a href="https://doi.org/10.1007/978-3-032-38091-3_31" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/DOI-10.1007/978-3-032-38091-3_31-red" alt="DOI"></a>
+  <a href="https://doi.org/10.1007/978-3-032-38091-3_31" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/DOI-10.1007/978.3.032.38091.3..31-red" alt="DOI"></a>
   <a href="https://github.com/azeemchaudharyg/GeoMeta-GT/blob/main/train.py" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Framework-PyTorch_Geometric-purple" alt="Implementation"></a>
   <a href="#" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
 </p>
