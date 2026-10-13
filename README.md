@@ -37,7 +37,7 @@ Automated skin cancer classification from dermoscopic images remains challenging
 
 ## Method Overview
 <p align="center">
-  <img src="utils/model_gnn_cnn.jpg" width="800" alt="Context-Aware GNN Architecture Diagram"><br>
+  <img src="src/model_fig.jpg" width="800" alt="Context-Aware GNN Architecture Diagram"><br>
   <em>Figure: Overview of the Context-Aware Graph Neural Network pipeline for lesion classification.</em>
 </p>
 
