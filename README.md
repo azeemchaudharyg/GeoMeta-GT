@@ -133,9 +133,7 @@ If you find our research useful in your work, please cite our paper:
   doi={10.1007/978-3-032-38091-3_31}
 }
 
----
 
-```bibtex
 @InProceedings{10.1007/978-3-032-38091-3_31,
 author="Azeem, Muhammad and Hussain, Tanveer and Ahmed, Amr and Behera, Ardhendu",
 title="Geometry-Aware Superpixel Graph Transformer with Metadata for Skin Lesion Classification",
