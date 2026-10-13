@@ -62,6 +62,89 @@ The proposed **GeoMeta-GT** framework consists of the following stages:
 
 ---
 
+## Installation & Setup
+
+This framework leverages **PyTorch** and **PyTorch Geometric (PyG)** to run optimized graph message-passing operations.
+
+### 1. Environment Initialization
+```bash
+conda create -n geom-gnn python=3.10 -y
+conda activate geom-gnn
+```
+```
+pip install requirements.txt
+```
+
+---
+
+## Datasets
+
+* **Multi-Benchmark Evaluation:** The proposed framework is evaluated on four public skin lesion datasets: ISIC 2024, HAM10000, PAD-UFES-20, and HIBA, covering diverse imaging conditions and variations in dataset characteristics.
+
+* **Class Distribution and Imbalance:** The selected benchmarks exhibit different class distributions and levels of class imbalance, enabling evaluation of the framework's robustness in distinguishing benign and malignant lesions across diverse classification settings.
+
+* **Clinical Metadata Integration:** In addition to dermoscopic image features, the framework incorporates available clinical metadata, including patient demographics and anatomical information, through a dedicated metadata node within the graph representation.
+
+* **Multimodal Classification:** The datasets support the evaluation of joint visual and clinical feature learning, allowing the framework to investigate how metadata integration and geometry-aware graph reasoning contribute to skin lesion classification performance.
+
+---
+
+## Performance Comparison with State-of-the-Art (SOTA) Methods
+
+The table below presents a comprehensive comparison of **GeoMeta-GT** against existing state-of-the-art methods across four public skin lesion classification benchmarks: ISIC 2024, HAM10000, PAD-UFES-20, and HIBA. Performance is evaluated using accuracy, precision, recall, and F1-score (%). The best-performing results are highlighted in **bold**.
+
+| Dataset | Method | Accuracy (%) | Precision (%) | Recall (%) | F1-Score (%) |
+|:---|:---|---:|---:|---:|---:|
+| **ISIC 2024** | DSCC-Net | 94.17 | 94.17 | 93.76 | 93.93 |
+| | HybridCNN | 94.44 | 94.38 | 94.21 | 94.44 |
+| | Multimodal Contrastive | 96.69 | 96.14 | 96.41 | 96.69 |
+| | **GeoMeta-GT (Ours)** | **98.61** | **98.58** | **98.64** | **98.61** |
+| **HAM10000** | Transformer Network | 94.31 | 94.10 | 95.01 | 93.20 |
+| | Inception-ResNet | 95.09 | 95.49 | 95.16 | 95.27 |
+| | Hybrid LSTM-CNN | 96.21 | 94.75 | 94.93 | 95.55 |
+| | **GeoMeta-GT (Ours)** | **98.23** | **98.21** | **98.26** | **98.23** |
+| **PAD-UFES-20** | Multimodal Contrastive | 93.51 | 93.41 | 93.21 | 93.25 |
+| | Context-Aware GNN | 94.29 | 94.40 | 94.29 | 94.26 |
+| | Multimodal Learning | 95.61 | 95.54 | 95.12 | 95.61 |
+| | **GeoMeta-GT (Ours)** | **97.17** | **97.17** | **97.21** | **97.17** |
+| **HIBA** | MultiExCam | 85.11 | 86.20 | 84.45 | 85.11 |
+| | Multimodal Contrastive | 87.51 | 86.40 | 87.51 | 88.51 |
+| | Context-Aware GNN | 89.19 | 90.01 | 89.19 | 89.19 |
+| | **GeoMeta-GT (Ours)** | **95.41** | **95.38** | **95.44** | **95.41** |
+
+---
+
+## Acknowledgments
+This work was supported by UK Research and Innovation (UKRI) — Economic and Social Research Council (ESRC) grant SCAnDi (ES/Y010655/1), and the EU Marie Skłodowska-Curie Actions (MSCA) grant SynAM (HORIZON-MSCA-2022-SE-01, Project: 101129996).
+
+---
+
+## Citation
+If you find our research useful in your work, please cite our paper:
+
+```bibtex
+@inproceedings{azeem2026geometry,
+  title={Geometry-Aware Superpixel Graph Transformer with Metadata for Skin Lesion Classification},
+  author={Azeem, Muhammad and Hussain, Tanveer and Ahmed, Amr and Behera, Ardhendu},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={316--326},
+  year={2026},
+  organization={Springer}
+  doi={10.1007/978-3-032-38091-3_31}
+}
+
+```bibtex
+@InProceedings{10.1007/978-3-032-38091-3_31,
+author="Azeem, Muhammad and Hussain, Tanveer and Ahmed, Amr and Behera, Ardhendu",
+title="Geometry-Aware Superpixel Graph Transformer with Metadata for Skin Lesion Classification",
+booktitle="Medical Image Computing and Computer Assisted Intervention -- MICCAI 2026",
+year="2027",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="316--326",
+isbn="978-3-032-38091-3"
+}
+
 
 
 
