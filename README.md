@@ -36,14 +36,29 @@ Automated skin cancer classification from dermoscopic images remains challenging
 ---
 
 ## Method Overview
+
+The proposed **GeoMeta-GT** framework consists of the following stages:
+
+1. **Frozen CNN Feature Extraction:** Extract spatially structured deep feature maps from dermoscopic images using a pretrained ResNet152 backbone, which remains frozen during training to reduce computational overhead and the number of trainable parameters.
+
+2. **Deep Feature-Space Superpixel Decomposition:** Apply Simple Linear Iterative Clustering (SLIC) to the upsampled deep feature maps to partition each image into spatially coherent regions. This feature-space segmentation aims to capture semantically meaningful lesion structures.
+
+3. **Region-Level Feature Representation:** Represent each superpixel as a graph node by concatenating mean-pooled and max-pooled deep features, combining global regional context with salient local information.
+
+4. **Geometry-Aware Graph Construction:** Connect superpixel nodes using nearest-neighbour relationships based on their spatial coordinates. Encode inter-region Euclidean distance and relative orientation as edge attributes to preserve the geometric structure of the lesion.
+
+5. **Metadata-as-Node Fusion:** Encode clinical metadata, including demographic and anatomical information, into a dedicated metadata node. Connect this node bidirectionally to all superpixel nodes, enabling joint visual and clinical reasoning through graph message passing rather than conventional late fusion.
+
+6. **Edge-Aware Graph Transformer:** Integrate geometric edge attributes directly into the attention mechanism and message aggregation process, allowing the model to adaptively weight neighbouring regions according to their visual representations and spatial relationships.
+
+7. **Similarity-Weighted Structural Refinement:** Refine the updated node embeddings through similarity-weighted propagation, encouraging semantically consistent regions to exchange information while suppressing inconsistent or noisy representations.
+
+8. **Graph-Level Representation and Classification:** Apply global mean pooling to aggregate the refined node embeddings into a graph-level representation, followed by a trainable classifier to predict benign or malignant lesions.
+
 <p align="center">
   <img src="src/model_fig.jpg" width="800" alt="Context-Aware GNN Architecture Diagram"><br>
-  <em>Figure: Overview of the Context-Aware Graph Neural Network pipeline for lesion classification.</em>
+  <em>Figure: GeoMeta-GT combines frozen deep visual representations, geometry-aware region-level graph reasoning, and graph-native clinical metadata integration within a parameter-efficient classification framework.</em>
 </p>
-
-1. **Graph Processing Pipeline:** The joint multimodal feature vector $F \in \mathbb{R}^D$ is partitioned into $N$ unique subspaces (e.g., $N=6$) representing nodes in a fully connected graph, which undergoes relation-aware feature aggregation and multi-hop message passing to map long-range dependencies.
-2. **Downstream Classification:** The updated, context-rich graph nodes are aggregated via global mean pooling to construct a singular, graph-level feature embedding that is passed directly to a classifier to yield the final diagnostic prediction (benign vs. malignant).
-3. **Ablation Framework:** To isolate multimodal performance impacts, an alternative late-fusion architecture variant is developed where metadata tracks are separately encoded through a Multi-Layer Perceptron (MLP) and merged with graph-processed image nodes right before the final classification head.
 
 ---
 
